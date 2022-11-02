@@ -1,0 +1,103 @@
+.compte{
+    float: right;
+}
+
+#adresseContact {
+    color: #183C99;
+    font-weight: bold;
+}
+
+#boutonEnvoyer:hover, #formulaire button:hover {
+    background-color: #4a86e8;
+}
+
+#boutonEnvoyer {
+    border: 1px black solid;
+    border-radius: 20px;
+    background-color: #183C99;
+    padding: 10px 30px;
+    color: white;
+    display: block;
+    width: 170px;
+    text-align: center;
+}
+
+#formulaire {
+    min-width: 400px;
+    max-width: 1000px;
+    position: absolute;
+    top: 500px;
+    border-radius: 10px;
+    width: 60%;
+    background-color: #cfe2f3;
+    display: none;
+}
+
+#formulaire p {
+    color: black;
+}
+
+#objet, #contenu, #publication {
+    border: 1px grey solid;
+    background-color: white;
+}
+
+#objet p, #objet input {
+    display: inline-block;
+}
+
+#formulaire input, #formulaire textarea {
+    width: 90%;
+    border: 2px black solid;
+    background-color: #e6e6e6;
+}
+
+#input-contenu {
+    height: 250px;
+}
+
+textarea {
+    margin-left: 25px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+#publication button {
+    border: 1px black solid;
+    border-radius: 20px;
+    background-color: #1155cc;
+    padding: 10px 20px;
+    color: white;
+    width: 100px;
+    text-align: center;
+}
+
+#publication {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    #boutonEnvoyer {
+        width: 250px;
+    }
+
+    #maps {
+        width: 100%;
+    }
+    
+    #formulaire {
+        top: 50px;
+        left: 0;
+        min-width: none;
+        max-width: 96%;
+        position: fixed;
+    }
+
+    #formulaire input, #formulaire textarea {
+        width: 80%;
+        border: 2px black solid;
+        background-color: #e6e6e6;
+    }
+}

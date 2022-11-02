@@ -1,0 +1,52 @@
+.menu .icon {
+  display: none;
+    padding: 4px 6px;
+}
+.menu .icon a{
+    color: white;
+}
+
+
+@media screen and (max-width: 600px) {
+    #all, header{
+        min-width: 300px;
+        max-width: 600px;
+        margin: 0 auto 10px auto;
+    }
+    .compte{
+        position: fixed;
+        top: 0;
+        right: 0;
+        border-radius: 0 0 0 20px;
+    }
+    #page{
+        flex-direction: column;
+    }
+    #gauche{
+        max-width: 100%;
+    }
+    #droite{
+        max-width: 100%;
+    }
+    .menu th:not(:first-child) {display: none;}
+    .menu th.icon {
+        float: right;
+        display: block;
+    }
+    .menu.responsive {position: relative;}
+    .menu.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menu.responsive th {
+        display: block;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #imgLoupe{
+        display:none;
+    }
+}
