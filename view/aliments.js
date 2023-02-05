@@ -1,11 +1,13 @@
 var nbAlimentSaisie = 1;
 var nbAlimentSaisieMax = 10;
+var saisieTypesAliments;
 
 function init() {
-    var saisieTypesAliments = document.getElementsByClassName("saisie-type-aliment");
+    mettreTypeAliments();
+    
+    
 
-    for(var i = 0; i < saisieTypesAliments.length; i++)
-        saisieTypesAliments[i].addEventListener("click", afficherSelectAliments);
+
 
     document.getElementById("ajouterAliment").addEventListener("click", ajouterSaisie);
     document.getElementById("supprimerAliment").addEventListener("click", supprimerSaisie);
@@ -17,6 +19,7 @@ function ajouterSaisie() {
     if(nbAlimentSaisie != nbAlimentSaisieMax) {
         nbAlimentSaisie++;
         elt[0].classList.remove("cache");
+        mettreTypeAliments();
     }
     else
         alert("Vous avez saisie le nombre maximal d'aliments.");
@@ -39,12 +42,38 @@ function showDiv(divId, element) {
     document.getElementById(divId).style.display = element.target.value != "vide" ? 'block' : 'none';
 }
 
-function afficherSelectAliments(event) {
-    if(event.target.value != "vide") {
-        var divParent = event.target.parentElement;
-        showDiv(divParent.id.substring(7), event);
-        afficherAliments(event.target.innerHTML, divParent.id.substring(7));
+function afficherSelectAliments(e) {
+    var id = e.target.id;
+    if(e.target.value != "vide") {
+        showDiv(id.substring(7), e);
+        afficherAliments(e.target.value, id.substring(7));
     }
+    else {
+        showDiv(id.substring(7), e);   
+    }
+}
+
+function mettreTypeAliments() {
+    var e = $("#saisie-" + nbAlimentSaisie);
+
+    $.ajax({
+        url: "http://localhost/SAE-Refonte-Site-PHP/model/recupNomAliments.php",
+        data: {"action" : "getTypesAliment"},
+        dataType: "json",
+        method: "POST",
+        success: function(retour) {
+            e.html("<option value='vide'>--Choisissez un type d'aliments--</option>");
+            retour.forEach(elt => {
+                e.html(e.html() + "<option class='saisie-type-aliment' value='" + elt['alim_ssgrp_nom_fr'] + "'>" + elt['alim_ssgrp_nom_fr'] + "</option>");
+            });
+
+            saisieTypesAliments = document.getElementById("saisie-" + nbAlimentSaisie);
+            saisieTypesAliments.addEventListener("change", (e) => { afficherSelectAliments(e) });
+        },
+        error: function() {
+            alert("Erreur url");
+        }
+    });
 }
 
 function afficherAliments(type, elt) {
@@ -53,7 +82,7 @@ function afficherAliments(type, elt) {
 
     $.ajax({
         url: "recupNomAliments.php",
-        data: {"ssTypeAliments" : type},
+        data: {"action": "getAliments" ,"ssTypeAliments" : type},
         dataType: "json",
         method: "POST",
         success: function(retour) {

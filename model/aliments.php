@@ -2,7 +2,7 @@
     require("footer.php");
     require("../view/sondage.html");
 
-    function getTypeAliments() {
+    /*function getTypeAliments() {
         require ("connectBD.php");
         $sql = "
         SELECT DISTINCT alim_ssgrp_nom_fr
@@ -24,9 +24,9 @@
 
         echo "<option value='vide'>--Choisissez un type d'aliments--</option>";
         foreach($typesAliments as $type) {
-            echo "<option class='saisie-type-aliment' value=" . $type['alim_ssgrp_nom_fr'] . ">" . $type['alim_ssgrp_nom_fr'] . "</option>";
+            echo "<option class='saisie-type-aliment' value='" . $type['alim_ssgrp_nom_fr'] . "'>" . $type['alim_ssgrp_nom_fr'] . "</option>";
         }
-    }
+    }*/
 
 
 ?>
