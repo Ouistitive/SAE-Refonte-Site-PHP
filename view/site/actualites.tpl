@@ -6,21 +6,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="../view/styles/homestyle.css">
-    <link rel="stylesheet" href="../view/styles/actualites.css">
-    <link rel="stylesheet" href="../view/styles/footer.css">
-    <link rel="stylesheet" href="../view/styles/homestyle_mobile.css">
-    <script src="../view/footer.js"></script>
-    <script src="../view/actualites.js"></script>
+    <link rel="stylesheet" href="view/styles/homestyle.css">
+    <link rel="stylesheet" href="view/styles/actualites.css">
+    <link rel="stylesheet" href="view/styles/footer.css">
+    <link rel="stylesheet" href="view/styles/homestyle_mobile.css">
+    <script src="view/footer.js"></script>
+    <script src="view/actualites.js"></script>
 </head>
 <body>
     <header>
-        <img id="logo" src="../view/image/logo casbt.png">
+        <img id="logo" src="view/image/logo casbt.png">
         <div class="rech-compte">
-            <button class="compte" onclick="location.href='connexion.php';">Accéder à votre espace privé</button>
+            <button class="compte" onclick="location.href='index.php?c=site&a=connexion';">Accéder à votre espace privé</button>
             <div class="recherche">
                 <input type="text" placeholder="Recherche..">
-                <img id="imgLoupe" src="../view/image/loupe.png">
+                <img id="imgLoupe" src="view/image/loupe.png">
             </div>
         </div>
     </header>
@@ -31,7 +31,7 @@
             <nav>
                     <table id="nav-table" class="menu"><tr>
                         <th class="nav-element" id="accueil"><a href="index.php">Accueil</a></th>
-                        <th class="nav-element current"><a href="/">Actualités</a></th>
+                        <th class="nav-element current"><a href="index.php?c=site&a=actualites">Actualités</a></th>
                         <th class="nav-element"><a href="/">Les communes membres</a></th>
                         <th class="dropdown nav-element">
                             <span>Infos pratiques ▼</span>
@@ -46,7 +46,7 @@
                                             
                                         </div>
                                     </div>
-                                    <a class="dropdown-element" href="aliments.php">Sondage</a>
+                                    <a class="dropdown-element" href="index.php?c=sondage&a=questions">Sondage</a>
                                     <a class="dropdown-element" href="/">Auto-relève</a>
                                     <a class="dropdown-element" href="/">Tarifs et réglements</a>
                                     <a class="dropdown-element" href="/">Comment lire mon compteur ?</a>
@@ -55,7 +55,7 @@
                                     
                                 </div>
                         </th>
-                        <th class="nav-element"><a href="nous_contacter.php">Nous contacter</a></th>
+                        <th class="nav-element"><a href="index.php?c=site&a=nous_contacter">Nous contacter</a></th>
                         <th class="nav-element"><a href="/">Les élus CASBT</a></th>
                         <th class="icon"><a href="javascript:void(0);" onclick="myFunction()">    
                                 <i class="fa fa-bars fa-2x"></i>
@@ -111,7 +111,7 @@
         </div>
         
         </div>
-        <?php afficherFooter(); ?>
+        <?php require("view/site/footer.php"); ?>
     </div>
 </body>
 

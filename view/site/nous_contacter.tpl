@@ -5,30 +5,31 @@
 	    <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../view/styles/homestyle.css">
-        <link rel="stylesheet" href="../view/styles/footer.css">
-        <link rel="stylesheet" href="../view/styles/homestyle_mobile.css">
-        <script src="../view/footer.js"></script>
-	</head
+        <link rel="stylesheet" href="view/styles/homestyle.css">
+        <link rel="stylesheet" href="view/styles/footer.css">
+        <link rel="stylesheet" href="view/styles/nous_contacter.css">
+        <link rel="stylesheet" href="view/styles/homestyle_mobile.css">
+        <script src="view/footer.js"></script>
+    </head>
     
     <body>
-        <div id="all">
         <header>
-            <img id="logo" src="../view/image/logo casbt.png">
+            <img id="logo" src="view/image/logo casbt.png">
             <div class="rech-compte">
+                <button class="compte" onclick="location.href='connexion.php';">Accéder à votre espace privé</button>
                 <div class="recherche">
                     <input type="text" placeholder="Recherche..">
-                    <img id="imgLoupe" src="../view/image/loupe.png">
+                    <img id="imgLoupe" src="view/image/loupe.png">
                 </div>
             </div>
         </header>
-        
-            
+        <div id="all">
+
         <div id="main-page">
             <nav>
                 <table id="nav-table" class="menu"><tr>
-                    <th class="nav-element current" id="accueil"><a href="/">Accueil</a></th>
-                    <th class="nav-element"><a href="actualites.php">Actualités</a></th>
+                    <th class="nav-element" id="accueil"><a href="index.php">Accueil</a></th>
+                    <th class="nav-element"><a href="index.php?c=site&a=actualites">Actualités</a></th>
                     <th class="nav-element"><a href="/">Les communes membres</a></th>
                     <th class="dropdown nav-element">
                         <span>Infos pratiques ▼</span>
@@ -43,7 +44,7 @@
                                         
                                     </div>
                                 </div>
-                                <a class="dropdown-element" href="aliments.php">Sondage</a>
+                                <a class="dropdown-element" href="index.php?c=sondage&a=questions">Sondage</a>
                                 <a class="dropdown-element" href="/">Auto-relève</a>
                                 <a class="dropdown-element" href="/">Tarifs et réglements</a>
                                 <a class="dropdown-element" href="/">Comment lire mon compteur ?</a>
@@ -52,7 +53,7 @@
                                 
                             </div>
                     </th>
-                    <th class="nav-element"><a href="nous_contacter.php">Nous contacter</a></th>
+                    <th class="nav-element current"><a href="index.php?c=site&a=nous_contacter">Nous contacter</a></th>
                     <th class="nav-element"><a href="/">Les élus CASBT</a></th>
                     <th class="icon"><a href="javascript:void(0);" onclick="myFunction()">    
                             <i class="fa fa-bars fa-2x"></i>
@@ -60,48 +61,52 @@
                     </th>
                 </tr></table>
             </nav>
-            
+
             <div id=page>
                 
                 <div id="gauche">
-                <h2 id="titre">Accueil</h2>
-                <p>Chers abonnés, chères abonnées,</p>
-                <p>Toute l'équipe de la Communauté d'Agglomération du Sud Basse-Terre est heureuse de vous accueillir sur votre tout nouveau portail web.</p>
-                <p>Après avoir créé votre espace abonné, quelques clics suffiront pour :</p>
-                <ul>
-                    <li>Suivre vos consommations</li>
-                    <li>Gérer vos abonnements</li>
-                    <li>Télécharger et payer vos factures en ligne</li>
-                    <li>Gérer vos moyens de paiement</li>
-                    <li>Signaler un déménagement</li>
-                    <li>Effectuer des demandes d'intervention</li>
-                    <li>Entrer en contact avec votre service clientèle</li>
-                </ul>
-                <p>Pour créer votre espace abonné, munissez-vous simplement de votre dernière facture, cliquez sur le lien "Pas encore de compte" et laissez-vous guider.</p>
-                </div>
-                <div id="droite">
-                    <button class = "compte" onclick="location.href='connexion.php';">Accéder à votre espace privé</button>
-                    <article id="mini-actu">
-                        <a id="nomActu">Actualités</a>
-                        <b><p id="titreactu" class="titreActualite">Coupure dans la distribution d'eau à Baillif</p></b>
-                        <p id="contenuActualite">
-                            Suite à une rupture de canalisation la distribution de l'eau sera interrompue le samedi 27 février 2016 sur la commune de baillif et particulièrement dans les secteurs de CADET, BOURG, Cité CHAULET de 7h à 18h. madame le Président vous prie de bien l'excuser pour la gêne occasionnée
-                        </p>
-                    </article>
+                <h2 id="titre">Nous contacter</h2>
+                <p id="adresseContact">Communauté d'Agglomération GRAND SUD CARAIBE</p>
+                <p>36 Rue de la République - 97100 Basse Terre</p>
+
+
+                <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1566.6794495041895!2d-61.73104268574015!3d15.992729959623968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c149fc0c8acadeb%3A0xd984228f2f68c2ae!2s36%20Rue%20de%20la%20R%C3%A9publique%2C%20Basse-Terre%2097100!5e0!3m2!1sfr!2sfr!4v1663664613776!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <button id="boutonEnvoyer" onclick="document.getElementById('formulaire').style.display = 'block';">Nous envoyer un message</button>
+
+                <div id="formulaire" onclick="">
+                    <p id="titre-formulaire">Formulaire</p>
+                    <div id="objet">
+                        <p>Objet :</p>
+                        <input>
+                    </div>
+                    <div id="contenu">
+                        <p>Contenu :</p>
+                        <textarea rows="20" cols="33"></textarea>
+                    </div>
+                    <div id="publication">
+                        <button id="publier" onclick="document.getElementById('formulaire').style.display = 'none';">Publier</button>
+                        <button onclick="document.getElementById('formulaire').style.display = 'none';">Annuler</button>
+                    </div>
+                    
                 </div>
             
             </div>
+                <div id="droite">
+                    <div id="mini-actu">
+                        <a id="nomActu">Actualités</a>
+                        <p id="titreActualite" class="titreActualite">Coupure dans la distribution d'eau à Baillif</p>
+                        <p id="contenuActualite">
+                            Suite à une rupture de canalisation la distribution de l'eau sera interrompue le samedi 27 février 2016 sur la commune de baillif et particulièrement dans les secteurs de CADET, BOURG, Cité CHAULET de 7h à 18h. madame le Président vous prie de bien l'excuser pour la gêne occasionnée
+                        </p>
+                    </div>
+                </div>
+        </div>
         </div>
         
-
-
-
-
         
-        <?php afficherFooter(); ?>
-    </div>
-</body>
-
+        <?php require("view/site/footer.php"); ?>
+            </div>
         <script>
 function myFunction() {
   var x = document.getElementById("nav-table");
@@ -112,12 +117,10 @@ function myFunction() {
   }
 }
 
-
-
-    fetch("actu.json")
+            fetch("actu.json")
       .then(response => response.json())
       .then(json => {
-          document.getElementById("titreactu").innerHTML = json[0].titre;
+          document.getElementById("titreActualite").innerHTML = json[0].titre;
           document.getElementById("contenuActualite").innerHTML = json[0].p;     
       });
 </script>

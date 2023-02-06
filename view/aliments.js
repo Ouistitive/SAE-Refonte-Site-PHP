@@ -57,7 +57,7 @@ function mettreTypeAliments() {
     var e = $("#saisie-" + nbAlimentSaisie);
 
     $.ajax({
-        url: "http://localhost/SAE-Refonte-Site-PHP/model/recupNomAliments.php",
+        url: "index.php?c=sondage&a=recupNomAliments",
         data: {"action" : "getTypesAliment"},
         dataType: "json",
         method: "POST",
