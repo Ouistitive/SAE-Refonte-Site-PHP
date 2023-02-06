@@ -81,7 +81,7 @@ function afficherAliments(type, elt) {
     e.html("");
 
     $.ajax({
-        url: "recupNomAliments.php",
+        url: "index.php?c=sondage&a=recupNomAliments",
         data: {"action": "getAliments" ,"ssTypeAliments" : type},
         dataType: "json",
         method: "POST",
