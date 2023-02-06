@@ -46,7 +46,7 @@
     function getAliments($type) {
         require("connectBD.php");
         $sql = "
-        SELECT alim_nom_fr FROM `aliments` WHERE alim_ssgrp_nom_fr = '" . $type . "'";
+        SELECT DISTINCT alim_nom_fr FROM `aliments` WHERE alim_ssgrp_nom_fr = '" . $type . "'";
 
         try {
             $commande = $pdo->prepare($sql);
