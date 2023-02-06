@@ -76,14 +76,17 @@
                             sur une autre page et sont accessibles à tous.
                         </p>
 
-                        <form>
+                        <form action="index.php?c=sondage&a=insertAliments" method="post">
+                            <label for="email">Email (<span class="obligatoire">*</span>) </label>
+                            <input id="saisie-mail" name="email" placeholder="Entrez votre email. . .">
+
                             <div id="saisie">
                                 <div class="saisie-aliment">
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-1"></select>
                                     <div id="1" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
 
                                         </select>
                                     </div>
@@ -92,8 +95,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-2"></select>
                                     <div id="2" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
 
                                         </select>
                                     </div>
@@ -102,8 +105,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-3"></select>
                                     <div id="3" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -112,8 +115,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-4"></select>
                                     <div id="4" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -122,8 +125,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-5"></select>
                                     <div id="5" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -132,8 +135,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-6"></select>
                                     <div id="6" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -142,8 +145,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-7"></select>
                                     <div id="7" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -152,8 +155,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-8"></select>
                                     <div id="8" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -162,8 +165,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-9"></select>
                                     <div id="9" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -172,8 +175,8 @@
                                     <label for="type-aliments">Types d'aliments</label>
                                     <select id="saisie-10"></select>
                                     <div id="10" style="display: none;">
-                                        <label for="type-aliments">L'aliment</label>
-                                        <select class="aliment">
+                                        <label for="aliments">L'aliment</label>
+                                        <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
@@ -192,9 +195,12 @@
                                 </label>
                             </div>
 
-                            <input type="button" value="Envoyer">
+                            <input id="valider" type="submit" value="Envoyer">
                         </form>
 
+                        <div>
+                            <?php echo $msg; ?>
+                        </div>
                         
                     </div>
 

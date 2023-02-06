@@ -12,4 +12,8 @@
         require("model/recupNomAliments.php");
     }
 
+    function insertAliments(){
+        require("model/insertAliments.php");
+    }
+
 ?>
