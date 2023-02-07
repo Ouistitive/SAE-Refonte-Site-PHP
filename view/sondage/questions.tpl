@@ -196,6 +196,7 @@
                             </div>
 
                             <input id="valider" type="submit" value="Envoyer">
+                            <a href="index.php?c=sondage&a=resultats">Résultats</a>
                         </form>
 
                         <div>

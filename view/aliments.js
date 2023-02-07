@@ -11,6 +11,7 @@ function init() {
 
     document.getElementById("ajouterAliment").addEventListener("click", ajouterSaisie);
     document.getElementById("supprimerAliment").addEventListener("click", supprimerSaisie);
+
 }
 
 function ajouterSaisie() {
