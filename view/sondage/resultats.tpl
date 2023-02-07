@@ -75,7 +75,7 @@
                             aliments préférés.
                         </p>
                         
-                        <?php echo $gagnant ?>
+                        <?php echo $gagnant; ?>
 
                     </div>
 

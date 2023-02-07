@@ -1,5 +1,6 @@
 <?php
     $gagnant = selectresultat();
+    extract($gagnant);
     require("view/sondage/resultats.tpl");
 
     function selectresultat() {
@@ -34,7 +35,7 @@
             echo "<option class='saisie-type-aliment' value=" . $type['alim_ssgrp_nom_fr'] . ">" . $type['alim_ssgrp_nom_fr'] . "</option>";
         }*/
 
-        echo json_encode($gagnant);
+        return $gagnant;
                 
     }
         
