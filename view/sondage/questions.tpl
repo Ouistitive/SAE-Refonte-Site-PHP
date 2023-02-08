@@ -76,6 +76,10 @@
                             sur une autre page et sont accessibles à tous.
                         </p>
 
+                        <p>
+                            Si vous essayez de voter deux fois pour le même aliment, cela ne le comptabilisera qu'une fois.
+                        </p>
+
                         <form action="index.php?c=sondage&a=insertAliments" method="post">
                             <label for="email">Email (<span class="obligatoire">*</span>) </label>
                             <input id="saisie-mail" name="email" placeholder="Entrez votre email. . .">

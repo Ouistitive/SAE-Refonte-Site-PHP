@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="view/styles/homestyle.css">
         <link rel="stylesheet" href="view/styles/css_connexion.css">
+        <link rel="stylesheet" href="view/styles/resultats.css">
 
         <link rel="stylesheet" href="view/styles/footer.css">
         <link rel="stylesheet" href="view/styles/homestyle_mobile.css">
@@ -75,15 +76,22 @@
                             aliments préférés.
                         </p>
                         
-                        <?php
-                            echo '<table border="1" width="300">';
-                            foreach ($gagnant as $g) {
-                                echo '<tr>';
-                                echo "<td>" . $g['alim_nom_fr'];
-                                echo '</tr>';
-                            }
-                            echo '</table>';
-                        ?>
+                        <table>
+                        <tr>
+                            <th>Classement popularité</th>
+                            <th>Nom de l'aliment</th>
+                            <th>Nombre de fois choisies</th>
+                        </tr>
+                        <?php $compteur = 0;
+                        foreach ($gagnant as $g) { ?>
+                            <tr>
+                            <td><?php echo ++$compteur; ?></td>
+                            <td><?php echo $g['alim_nom_fr']; ?></td>
+                            <td><?php echo $g['nombre']; ?></td>
+                            </tr>
+                        <?php } ?>
+                        
+                        </table>
 
                     </div>
 

@@ -1,17 +1,19 @@
 <?php
     $gagnant = selectresultat();
-    var_dump($gagnant);
+    //var_dump($gagnant);
     require("view/sondage/resultats.tpl");
 
     function selectresultat() {
         require("connectBD.php");
 
         $sql = "
-        SELECT aliments.alim_nom_fr from aliments
+        SELECT aliments.alim_nom_fr, COUNT(*) as nombre from aliments
         INNER JOIN resultats WHERE aliments.num = resultats.idAliment_1 OR aliments.num = resultats.idAliment_2 
         OR aliments.num = resultats.idAliment_3 OR aliments.num = resultats.idAliment_4 OR aliments.num = resultats.idAliment_5 
         OR aliments.num = resultats.idAliment_6 OR aliments.num = resultats.idAliment_7 OR aliments.num = resultats.idAliment_8 
-        OR aliments.num = resultats.idAliment_9 OR aliments.num = resultats.idAliment_10;";
+        OR aliments.num = resultats.idAliment_9 OR aliments.num = resultats.idAliment_10
+        GROUP BY alim_nom_fr
+        ORDER BY 2 DESC;";
 
         try {
             $commande = $pdo->prepare($sql);
