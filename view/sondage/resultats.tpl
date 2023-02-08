@@ -75,7 +75,15 @@
                             aliments préférés.
                         </p>
                         
-                        <?php echo $gagnant; ?>
+                        <?php
+                            echo '<table border="1" width="300">';
+                            foreach ($gagnant as $g) {
+                                echo '<tr>';
+                                echo "<td>" . $g['alim_nom_fr'];
+                                echo '</tr>';
+                            }
+                            echo '</table>';
+                        ?>
 
                     </div>
 

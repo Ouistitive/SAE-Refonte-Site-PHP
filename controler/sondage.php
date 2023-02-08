@@ -1,7 +1,7 @@
 <?php
 
     function resultats(){
-        require("view/sondage/resultats.tpl");
+        require("model/resultat.php");
     }
 
     function questions(){
