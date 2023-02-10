@@ -68,7 +68,7 @@
                 </nav>
                 
                 <div id="page">
-                    <div id="gauche">
+                    <div>
                         <h2 id="titre">Sondage</h2>
                         <p>
                             Bienvenue sur la page de sondage. Sur cette page, vous allez pouvoir saisir les
@@ -81,115 +81,135 @@
                         </p>
 
                         <form action="index.php?c=sondage&a=insertAliments" method="post">
-                            <label for="email">Email (<span class="obligatoire">*</span>) </label>
-                            <input id="saisie-mail" name="email" placeholder="Entrez votre email. . .">
+                            <div id="modifieNbAliments">
+                                <input type="button" value="Ajouter un aliment" id="ajouterAliment">
+                                <input type="button" value="Enlever un aliment" id="supprimerAliment">
+                            </div>
+
+                            <div id="email">
+                                <label for="email">Email <span class="obligatoire">*</span> </label>
+                                <input id="saisie-mail" name="email" placeholder="Entrez votre email. . .">
+                            </div>
 
                             <div id="saisie">
+                                <hr>
                                 <div class="saisie-aliment">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-1"></select>
-                                    <div id="1" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="1" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
 
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
+                                
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-2"></select>
-                                    <div id="2" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="2" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
 
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
+
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-3"></select>
-                                    <div id="3" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="3" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-4"></select>
-                                    <div id="4" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="4" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-5"></select>
-                                    <div id="5" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="5" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-6"></select>
-                                    <div id="6" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="6" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-7"></select>
-                                    <div id="7" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="7" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-8"></select>
-                                    <div id="8" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="8" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-9"></select>
-                                    <div id="9" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="9" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                                 <div class="saisie-aliment cache">
-                                    <label for="type-aliments">Types d'aliments</label>
+                                    <label for="type-aliments">Selectionnez le groupe de l'aliment : </label>
                                     <select id="saisie-10"></select>
-                                    <div id="10" style="display: none;">
-                                        <label for="aliments">L'aliment</label>
+                                    <div class="select-aliments" id="10" style="display: none;">
+                                        <label for="aliments">Selectionnez l'aliment : </label>
                                         <select name="aliments[]" class="aliment">
                                             
                                         </select>
                                     </div>
+                                    <hr>
                                 </div>
                             </div>
                             
 
-                            <input type="button" value="Ajouter un aliment" id="ajouterAliment">
-                            <input type="button" value="Enlever un aliment" id="supprimerAliment">
+
 
                             <div id="confirmation">
                                 <input type="checkbox" id="confirmationDroit" name="confirmationDroit">
@@ -199,24 +219,16 @@
                                 </label>
                             </div>
 
+                            <p> (<span class="obligatoire">*</span>) : Champs obligatoires </p>
+
                             <input id="valider" type="submit" value="Envoyer">
-                            <a href="index.php?c=sondage&a=resultats">Résultats</a>
                         </form>
 
                         <div>
-                            <?php echo $msg; ?>
+                            <?php echo !isset($msg) ? "" : $msg; ?>
                         </div>
-                        
-                    </div>
 
-                    <div id="droite">
-                        <div id="mini-actu">
-                            <a id="nomActu">Actualités</a>
-                            <p id="titreActualite" class="titreActualite">Coupure dans la distribution d'eau à Baillif</p>
-                            <p id="contenuActualite">
-                                Suite à une rupture de canalisation la distribution de l'eau sera interrompue le samedi 27 février 2016 sur la commune de baillif et particulièrement dans les secteurs de CADET, BOURG, Cité CHAULET de 7h à 18h. madame le Président vous prie de bien l'excuser pour la gêne occasionnée 
-                            </p>
-                        </div>
+                        <a href="index.php?c=sondage&a=resultats">Résultats</a>
                     </div>
                 </div>
             </div>

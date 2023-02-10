@@ -1,13 +1,37 @@
 <?php
-    $email = $_POST['email'];
-    $tabAliments = $_POST['aliments'];
+    $email;
+    $tabAliments;
     $msg = "";
     $tabIdAlim = array();
 
-    selectIdAliments($tabAliments, $tabIdAlim);
-    insertionResultat($email, $tabIdAlim);
-
+    if(verification($email, $tabAliments)) {
+        selectIdAliments($tabAliments, $tabIdAlim);
+        //insertionResultat($email, $tabIdAlim);
+    }
+    else {
+        if(!isset($_POST['email']))
+            $msg = "L'adresse mail n'a pas été renseignée.";
+        if(!isset($_POST['aliments']))
+            $msg = "Pas d'aliment n'a été saisie.";
+        if(!isset($_POST['confirmationDroit']))
+            $msg = "Veuillez cochez la case de confirmation.";
+    }
+    
     require("view/sondage/questions.tpl");
+
+    function verification(&$email, &$tabAliments) {
+        if(!isset($_POST['email']))
+            return false;
+        if(!isset($_POST['aliments']))
+            return false;
+        if(!isset($_POST['confirmationDroit']))
+            return false;
+
+        $email = $_POST['email'];
+        $tabAliments = $_POST['aliments'];
+
+        return true;
+    }
 
     function selectIdAliments($tabAliments, &$tabId) {
         global $msg;
@@ -52,12 +76,10 @@
                 if($i < count($tabId)) {
                     $commande->bindParam("alim" . ($i+1), $tabId[$i]["num"], PDO::PARAM_STR); 
                     $msg = $msg . " " . $tabId[$i]["num"];
-                    echo $tabId[$i]["num"] . " ";
                 }
                 else {
                     $commande->bindParam("alim" . ($i+1), $varNul, PDO::PARAM_STR);  
                     $msg = $msg . " " . "/";
-                    echo "NULL" . " ";
                 }
             }
 
