@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 07 Février 2023 à 12:28
--- Version du serveur :  5.6.20-log
--- Version de PHP :  7.0.3
+-- Généré le :  Lun 13 Février 2023 à 16:35
+-- Version du serveur :  5.7.11
+-- Version de PHP :  5.6.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `aliments` (
-  `num` int(3) NOT NULL DEFAULT '0',
+  `num` int(11) NOT NULL DEFAULT '0',
   `alim_nom_fr` varchar(140) DEFAULT NULL,
   `alim_nom_sci` varchar(10) DEFAULT NULL,
   `alim_grp_code` int(2) DEFAULT NULL,
@@ -679,6 +679,26 @@ INSERT INTO `aliments` (`num`, `alim_nom_fr`, `alim_nom_sci`, `alim_grp_code`, `
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `comptes`
+--
+
+CREATE TABLE `comptes` (
+  `email` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `nom` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `prenom` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `mdp` varchar(100) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `comptes`
+--
+
+INSERT INTO `comptes` (`email`, `nom`, `prenom`, `mdp`) VALUES
+('etienne.kita77@gmail.com', 'Etienne', 'Kita', '$2y$10$26KyEUAVUvAqwV./I9wWY.A2.xzpitmqyHXb8a4Ee0clHZhYf7inm');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `resultats`
 --
 
@@ -714,6 +734,12 @@ INSERT INTO `resultats` (`email`, `idAliment_1`, `idAliment_2`, `idAliment_3`, `
 --
 ALTER TABLE `aliments`
   ADD PRIMARY KEY (`num`);
+
+--
+-- Index pour la table `comptes`
+--
+ALTER TABLE `comptes`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Index pour la table `resultats`
