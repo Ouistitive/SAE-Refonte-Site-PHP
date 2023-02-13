@@ -80,7 +80,7 @@
                 <p>Pour créer votre espace abonné, munissez-vous simplement de votre dernière facture, cliquez sur le lien "Pas encore de compte" et laissez-vous guider.</p>
                 </div>
                 <div id="droite">
-                    <button class = "compte" onclick="location.href='connexion.php';">Accéder à votre espace privé</button>
+                    <button class = "compte" onclick="location.href='index.php?c=site&a=connexion';">Accéder à votre espace privé</button>
                     <article id="mini-actu">
                         <a id="nomActu">Actualités</a>
                         <b><p id="titreactu" class="titreActualite">Coupure dans la distribution d'eau à Baillif</p></b>

@@ -21,7 +21,7 @@
             <header>
                 <img id="logo" src="view/image/logo casbt.png">
                 <div class="rech-compte">
-                    <button class="compte" onclick="location.href='connexion.php';">Accéder à votre espace privé</button>
+                    <button class="compte" onclick="location.href='index.php?c=site&a=connexion';">Accéder à votre espace privé</button>
                     <div class="recherche">
                         <input type="text" placeholder="Recherche..">
                         <img id="imgLoupe" src="view/image/loupe.png">

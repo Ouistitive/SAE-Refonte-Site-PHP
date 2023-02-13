@@ -59,9 +59,9 @@
                 </tr></table>
             </nav>
         <div id="connexion-page">
-    		<h1 id="con">Connexion</h1>
+    		<h1 id="con">Inscription</h1>
     
-    		<form id="connexion-form" action="index.php?c=user&a=login" method="POST">
+    		<form id="connexion-form" action="index.php?c=user&a=createAccount" method="POST">
                 <div id="identifiants">
                     <div class="connexion-texbox">
         			    <input type="text" id="fid" placeholder="Email" name="email">
@@ -69,12 +69,14 @@
                     <div class="connexion-texbox">
         			    <input type="password" id="fmdp" placeholder="Mot de passe" name="mdp">
                     </div>
+                    <div class="connexion-texbox">
+        			    <input type="text" id="fnom" placeholder="Nom" name="nom">
+                    </div>
+                    <div class="connexion-texbox">
+        			    <input type="text" id="fprenom" placeholder="Prenom" name="prenom">
+                    </div>
                 </div>
-                
-    			<input type="checkbox" id="checkSouvenir" name="remember-pwd" value="true">
-    			  <label for="remember-pwd" class="entre">Se souvenir de moi</label>
-    			<a href="/" class="entre">Mot de passe oublié ?</a>
-    			<a href="index.php?c=user&a=createAccount" class="entre">Pas de compte ?</a>
+    			<a href="index.php?c=site&a=connexion" class="entre">Déjà un compte ?</a>
     			<input type="submit" value="Se connecter">
     		</form>
         </div>
