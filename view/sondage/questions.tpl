@@ -72,8 +72,8 @@
                         <h2 id="titre">Sondage</h2>
                         <p>
                             Bienvenue sur la page de sondage. Sur cette page, vous allez pouvoir saisir les
-                            dix aliments que vous préférez consommer. Les résultats de ce sondage est affichés
-                            sur une autre page et sont accessibles à tous.
+                            dix aliments que vous préférez consommer. Les résultats de ce sondage sont affichés
+                            publiquement <a href="index.php?c=sondage&a=resultats">ici</a>.
 
                             <br /> <br />
                             Un aliment ne peut pas être sélectionné plusieurs fois.

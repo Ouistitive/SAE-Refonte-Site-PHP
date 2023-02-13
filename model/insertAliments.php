@@ -16,6 +16,8 @@
             afficherMessage($msg, "Aucun aliment n'a été saisie.");
         else if(!isset($_POST['confirmationDroit']))
             afficherMessage($msg, "Veuillez cochez la case de confirmation.");
+        else if(!verifierEmail())
+            afficherMessage($msg, "Vous avez déjà fait le sondage.");
         else
             afficherMessage($msg, "Un aliment a été sélectionné plusieurs fois.");
     }
@@ -33,6 +35,8 @@
             return false;
         if(!isset($_POST['confirmationDroit']))
             return false;
+        if(!verifierEmail())
+            return false;
 
         $email = $_POST['email'];
         $tabAliments = $_POST['aliments'];
@@ -46,12 +50,12 @@
             }
         }
 
+        
 
         return true;
     }
 
     function selectIdAliments($tabAliments, &$tabId) {
-        global $msg;
         require("connectBD.php");
 
         for($i = 0; $i < count($tabAliments); $i++) {
@@ -75,8 +79,37 @@
         }
     }
 
+    function verifierEmail() {
+        require("connectBD.php");
+        $sql = "
+        SELECT email FROM resultats;";
+
+        $tab = array();
+
+        try {
+            $commande = $pdo->prepare($sql);
+            $bool = $commande->execute();
+
+            if($bool)
+                $tab = $commande->fetchAll(PDO::FETCH_ASSOC);
+            
+            foreach($tab as $i) {
+                if(strtoupper($_POST["email"]) == strtoupper($i["email"]))
+                    return false;
+            }
+
+            return true;
+        }
+        
+        catch (PDOException $e) {
+            echo utf8_encode("Echec de select : " . $e->getMessage() . "\n");
+            die("STOP Catch Verif");
+        }
+
+        return false;
+    }
+
     function insertionResultat($email, &$tabId) {
-        global $ALIMENTS_MAX, $msg;
         require ("connectBD.php");
         $sql = "
         INSERT INTO resultats(email, idAliment_1, idAliment_2, idAliment_3, idAliment_4, idAliment_5, idAliment_6, idAliment_7, 
