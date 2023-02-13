@@ -41,3 +41,7 @@ hr {
 #valider {
     font-size: 18px;
 }
+
+#msgErreur {
+    color: red;
+}

@@ -6,18 +6,25 @@
 
     if(verification($email, $tabAliments)) {
         selectIdAliments($tabAliments, $tabIdAlim);
-        //insertionResultat($email, $tabIdAlim);
+        insertionResultat($email, $tabIdAlim);
+        afficherMessage($msg, "Aliment(s) inséré(s) avec succès !");
     }
     else {
         if(!isset($_POST['email']))
-            $msg = "L'adresse mail n'a pas été renseignée.";
-        if(!isset($_POST['aliments']))
-            $msg = "Pas d'aliment n'a été saisie.";
-        if(!isset($_POST['confirmationDroit']))
-            $msg = "Veuillez cochez la case de confirmation.";
+            afficherMessage($msg, "L'adresse mail n'a pas été renseignée.");
+        else if(!isset($_POST['aliments']))
+            afficherMessage($msg, "Aucun aliment n'a été saisie.");
+        else if(!isset($_POST['confirmationDroit']))
+            afficherMessage($msg, "Veuillez cochez la case de confirmation.");
+        else
+            afficherMessage($msg, "Un aliment a été sélectionné plusieurs fois.");
     }
     
     require("view/sondage/questions.tpl");
+
+    function afficherMessage(&$msg, $texte) {
+        $msg = $texte;
+    }
 
     function verification(&$email, &$tabAliments) {
         if(!isset($_POST['email']))
@@ -29,6 +36,16 @@
 
         $email = $_POST['email'];
         $tabAliments = $_POST['aliments'];
+
+        for($i = 0; $i < count($tabAliments); $i++) {
+            for($j = 0; $j < count($tabAliments); $j++) {
+                if($i == $j) continue;
+
+                if($tabAliments[$i] == $tabAliments[$j])
+                    return false;
+            }
+        }
+
 
         return true;
     }
@@ -59,7 +76,7 @@
     }
 
     function insertionResultat($email, &$tabId) {
-        global $msg;
+        global $ALIMENTS_MAX, $msg;
         require ("connectBD.php");
         $sql = "
         INSERT INTO resultats(email, idAliment_1, idAliment_2, idAliment_3, idAliment_4, idAliment_5, idAliment_6, idAliment_7, 
@@ -75,11 +92,9 @@
             for($i = 0; $i < 10; $i++) {
                 if($i < count($tabId)) {
                     $commande->bindParam("alim" . ($i+1), $tabId[$i]["num"], PDO::PARAM_STR); 
-                    $msg = $msg . " " . $tabId[$i]["num"];
                 }
                 else {
                     $commande->bindParam("alim" . ($i+1), $varNul, PDO::PARAM_STR);  
-                    $msg = $msg . " " . "/";
                 }
             }
 
@@ -89,9 +104,6 @@
         catch (PDOException $e) {
             echo utf8_encode("Echec de insert : " . $e->getMessage() . "\n");
             die("STOP Catch Verif");
-        }
-
-
-        
+        }        
     }
 ?>

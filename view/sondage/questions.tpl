@@ -74,10 +74,9 @@
                             Bienvenue sur la page de sondage. Sur cette page, vous allez pouvoir saisir les
                             dix aliments que vous préférez consommer. Les résultats de ce sondage est affichés
                             sur une autre page et sont accessibles à tous.
-                        </p>
 
-                        <p>
-                            Si vous essayez de voter deux fois pour le même aliment, cela ne le comptabilisera qu'une fois.
+                            <br /> <br />
+                            Un aliment ne peut pas être sélectionné plusieurs fois.
                         </p>
 
                         <form action="index.php?c=sondage&a=insertAliments" method="post">
@@ -87,7 +86,7 @@
                             </div>
 
                             <div id="email">
-                                <label for="email">Email <span class="obligatoire">*</span> </label>
+                                <label for="email">Email <span class="obligatoire">*</span> : </label>
                                 <input id="saisie-mail" name="email" placeholder="Entrez votre email. . .">
                             </div>
 
@@ -219,12 +218,12 @@
                                 </label>
                             </div>
 
-                            <p> (<span class="obligatoire">*</span>) : Champs obligatoires </p>
+                            (<span class="obligatoire">*</span>) : Champs obligatoires
 
                             <input id="valider" type="submit" value="Envoyer">
                         </form>
 
-                        <div>
+                        <div id="msgErreur">
                             <?php echo !isset($msg) ? "" : $msg; ?>
                         </div>
 
