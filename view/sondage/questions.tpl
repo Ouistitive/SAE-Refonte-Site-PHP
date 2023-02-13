@@ -85,10 +85,10 @@
                                 <input type="button" value="Enlever un aliment" id="supprimerAliment">
                             </div>
 
-                            <div id="email">
+                            <!--<div id="email">
                                 <label for="email">Email <span class="obligatoire">*</span> : </label>
                                 <input id="saisie-mail" name="email" placeholder="Entrez votre email. . .">
-                            </div>
+                            </div>-->
 
                             <div id="saisie">
                                 <hr>

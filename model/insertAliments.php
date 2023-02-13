@@ -1,44 +1,20 @@
 <?php
-    $email;
-    $tabAliments;
-    $msg = "";
-    $tabIdAlim = array();
-
-    if(verification($email, $tabAliments)) {
-        selectIdAliments($tabAliments, $tabIdAlim);
-        insertionResultat($email, $tabIdAlim);
-        afficherMessage($msg, "Aliment(s) inséré(s) avec succès !");
-    }
-    else {
-        if(!isset($_POST['email']))
-            afficherMessage($msg, "L'adresse mail n'a pas été renseignée.");
-        else if(!isset($_POST['aliments']))
-            afficherMessage($msg, "Aucun aliment n'a été saisie.");
-        else if(!isset($_POST['confirmationDroit']))
-            afficherMessage($msg, "Veuillez cochez la case de confirmation.");
-        else if(!verifierEmail())
-            afficherMessage($msg, "Vous avez déjà fait le sondage.");
-        else
-            afficherMessage($msg, "Un aliment a été sélectionné plusieurs fois.");
-    }
     
-    require("view/sondage/questions.tpl");
-
-    function afficherMessage(&$msg, $texte) {
-        $msg = $texte;
-    }
 
     function verification(&$email, &$tabAliments) {
-        if(!isset($_POST['email']))
+        if(!isset($_SESSION['profile']['email']))
             return false;
+
+        $email = $_SESSION['profile']['email'];
+
         if(!isset($_POST['aliments']))
             return false;
         if(!isset($_POST['confirmationDroit']))
             return false;
-        if(!verifierEmail())
+        if(!verifierEmail($email))
             return false;
 
-        $email = $_POST['email'];
+        
         $tabAliments = $_POST['aliments'];
 
         for($i = 0; $i < count($tabAliments); $i++) {
@@ -78,13 +54,16 @@
                 array_push($tabId, $commande->fetchAll(PDO::FETCH_ASSOC)[0]);
         }
     }
-
+    //Renvoie true si l'utilisateur peut repondre au sondage
     function verifierEmail() {
         require("connectBD.php");
         $sql = "
         SELECT email FROM resultats;";
 
         $tab = array();
+        if(!isset($_SESSION['profile']['email']))
+            return false;
+        $email = $_SESSION['profile']['email'];
 
         try {
             $commande = $pdo->prepare($sql);
@@ -94,7 +73,7 @@
                 $tab = $commande->fetchAll(PDO::FETCH_ASSOC);
             
             foreach($tab as $i) {
-                if(strtoupper($_POST["email"]) == strtoupper($i["email"]))
+                if(strtoupper($email) == strtoupper($i["email"]))
                     return false;
             }
 

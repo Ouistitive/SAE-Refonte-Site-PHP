@@ -5,6 +5,7 @@
         if(isGoodLogin($_POST['email'], $_POST['mdp'])){
             $_SESSION['profile']['email'] = $_POST['email'];
         }
+        header("Location: index.php");
         die();
     }
 
