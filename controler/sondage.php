@@ -10,6 +10,8 @@
             
             if(!verifierEmail($_SESSION['profile']['email'])){
                 consoleLog("resultats");
+                require("model/resultat.php");
+                $gagnant = selectresultat();
                 require("view/sondage/resultats.tpl");
             }
             else{
