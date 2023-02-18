@@ -2,6 +2,8 @@
 
     function resultats(){
         require("model/resultat.php");
+        $gagnant = selectresultat();
+        require("view/sondage/resultats.tpl");
     }
 
     function questions(){
@@ -10,9 +12,10 @@
             
             if(!verifierEmail($_SESSION['profile']['email'])){
                 consoleLog("resultats");
-                require("model/resultat.php");
-                $gagnant = selectresultat();
-                require("view/sondage/resultats.tpl");
+
+                header("Location: index.php?c=sondage&a=resultats");
+
+                
             }
             else{
                 consoleLog("questions");
