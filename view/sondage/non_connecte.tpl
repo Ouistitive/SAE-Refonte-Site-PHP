@@ -76,7 +76,11 @@
                             compte sur le site. <br /> <br />
                             
                             Vous pouvez alors accéder au sondage en créeant un compte ou en vous connectant sur le site
-                            en cliquant <a href="index.php?c=site&a=connexion">ici</a>.
+                            en cliquant <a href="index.php?c=site&a=connexion">ici</a>. <br /> <br />
+
+                            Néanmoins, vous pouvez accéder à la page des résultats du sondage. Celle-ci affiche
+                            les résultats du sondage que les utilisateurs ont pu saisir. La page de résultat est accessible en
+                            cliquant <a href="index.php?c=sondage&a=resultats">ici</a>.
                         </p>
                     </div>
                 </div>
