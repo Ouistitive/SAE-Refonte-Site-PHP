@@ -25,33 +25,33 @@
 	<div id="main-page">
 		<nav>
                 <table id="nav-table" class="menu"><tr>
-                    <th class="nav-element" id="accueil.php"><a href="/">Accueil</a></th>
+                    <th class="nav-element" id="accueil.php"><a href="index.php">Accueil</a></th>
                     <th class="nav-element"><a href="index.php?c=site&a=actualites">Actualités</a></th>
-                    <th class="nav-element"><a href="/">Les communes membres</a></th>
+                    <th class="nav-element"><a href="index.php">Les communes membres</a></th>
                     <th class="dropdown nav-element">
                         <span>Infos pratiques ▼</span>
                             <div class="dropdown-content">
                                 <div class="dropdown-element dropright">
                                     <span>Mes démarches en ligne</span>
                                     <div class="dropright-content">
-                                        <a href="/" class="dropright-element">Contrôle Système d'Assainissement</a>
-                                        <a href="/" class="dropright-element">Demande de Résiliation d'Abonnement</a>
-                                        <a href="/" class="dropright-element">Je demande un branchement</a>
-                                        <a href="/" class="dropright-element">Modifier mes coordonées</a>
+                                        <a href="index.php" class="dropright-element">Contrôle Système d'Assainissement</a>
+                                        <a href="index.php" class="dropright-element">Demande de Résiliation d'Abonnement</a>
+                                        <a href="index.php" class="dropright-element">Je demande un branchement</a>
+                                        <a href="index.php" class="dropright-element">Modifier mes coordonées</a>
                                         
                                     </div>
                                 </div>
                                 <a class="dropdown-element" href="index.php?c=site?c=sondage&a=questions">Sondage</a>
-                                <a class="dropdown-element" href="/">Auto-relève</a>
-                                <a class="dropdown-element" href="/">Tarifs et réglements</a>
-                                <a class="dropdown-element" href="/">Comment lire mon compteur ?</a>
-                                <a class="dropdown-element" href="/">Conseil d'exploitation</a>
-                                <a class="dropdown-element" href="/">Foire aux questions</a>
+                                <a class="dropdown-element" href="index.php">Auto-relève</a>
+                                <a class="dropdown-element" href="index.php">Tarifs et réglements</a>
+                                <a class="dropdown-element" href="index.php">Comment lire mon compteur ?</a>
+                                <a class="dropdown-element" href="index.php">Conseil d'exploitation</a>
+                                <a class="dropdown-element" href="index.php">Foire aux questions</a>
                                 
                             </div>
                     </th>
                     <th class="nav-element"><a href="index.php?c=site&a=nous_contacter">Nous contacter</a></th>
-                    <th class="nav-element"><a href="/">Les élus CASBT</a></th>
+                    <th class="nav-element"><a href="index.php">Les élus CASBT</a></th>
                     <th class="icon"><a href="javascript:void(0);" onclick="myFunction()">    
                             <i class="fa fa-bars fa-2x"></i>
                         </a>
