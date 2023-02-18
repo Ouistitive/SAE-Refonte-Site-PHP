@@ -41,7 +41,7 @@
                                         
                                     </div>
                                 </div>
-                                <a class="dropdown-element" href="index.php?c=site?c=sondage&a=questions">Sondage</a>
+                                <a class="dropdown-element" href="index.php?c=sondage&a=questions">Sondage</a>
                                 <a class="dropdown-element" href="index.php">Auto-relève</a>
                                 <a class="dropdown-element" href="index.php">Tarifs et réglements</a>
                                 <a class="dropdown-element" href="index.php">Comment lire mon compteur ?</a>
