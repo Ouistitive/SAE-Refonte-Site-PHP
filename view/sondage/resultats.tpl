@@ -73,7 +73,7 @@
                         <h2 id="titre">Résultats</h2>
                         <p>
                             Bienvenue sur la page de résultats. Sur cette page, vous allez pouvoir voir les
-                            aliments préférés.
+                            10 aliments préférés. 
                         </p>
                         
                         <table>

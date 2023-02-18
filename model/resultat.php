@@ -1,7 +1,5 @@
 <?php
-    $gagnant = selectresultat();
-    //var_dump($gagnant);
-    require("view/sondage/resultats.tpl");
+    
 
     function selectresultat() {
         require("connectBD.php");
@@ -13,7 +11,8 @@
         OR aliments.num = resultats.idAliment_6 OR aliments.num = resultats.idAliment_7 OR aliments.num = resultats.idAliment_8 
         OR aliments.num = resultats.idAliment_9 OR aliments.num = resultats.idAliment_10
         GROUP BY alim_nom_fr
-        ORDER BY 2 DESC;";
+        ORDER BY 2 DESC
+        LIMIT 10;";
 
         try {
             $commande = $pdo->prepare($sql);
