@@ -73,7 +73,7 @@
                 
     			<input type="checkbox" id="checkSouvenir" name="remember-pwd" value="true">
     			  <label for="remember-pwd" class="entre">Se souvenir de moi</label>
-    			<a href="/" class="entre">Mot de passe oublié ?</a>
+    			<a class="entre">Mot de passe oublié ?</a>
     			<a href="index.php?c=user&a=createAccount" class="entre">Pas de compte ?</a>
     			<input type="submit" value="Se connecter">
     		</form>

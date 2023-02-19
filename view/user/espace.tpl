@@ -64,23 +64,14 @@
             <div id=page>
                 
                 <div id="gauche">
-                <h2 id="titre">Accueil</h2>
-                <p>Chers abonnés, chères abonnées,</p>
-                <p>Toute l'équipe de la Communauté d'Agglomération du Sud Basse-Terre est heureuse de vous accueillir sur votre tout nouveau portail web.</p>
-                <p>Après avoir créé votre espace abonné, quelques clics suffiront pour :</p>
-                <ul>
-                    <li>Suivre vos consommations</li>
-                    <li>Gérer vos abonnements</li>
-                    <li>Télécharger et payer vos factures en ligne</li>
-                    <li>Gérer vos moyens de paiement</li>
-                    <li>Signaler un déménagement</li>
-                    <li>Effectuer des demandes d'intervention</li>
-                    <li>Entrer en contact avec votre service clientèle</li>
-                </ul>
-                <p>Pour créer votre espace abonné, munissez-vous simplement de votre dernière facture, cliquez sur le lien "Pas encore de compte" et laissez-vous guider.</p>
+                <h2 id="titre">
+                    <?php
+                    echo "Bienvenue sur votre espace privé ".$infos["prenom"];
+                    ?>
+                </h2>
+                <a href="index.php?c=user&a=disconnect">Se déconnecter</a>
                 </div>
                 <div id="droite">
-                    <button class = "compte" onclick="location.href='index.php?c=site&a=connexion';">Accéder à votre espace privé</button>
                     <article id="mini-actu">
                         <a id="nomActu">Actualités</a>
                         <b><p id="titreactu" class="titreActualite">Coupure dans la distribution d'eau à Baillif</p></b>

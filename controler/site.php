@@ -14,7 +14,14 @@
     }
 
     function connexion(){
-        require("view/site/connexion.tpl");
+        if(isset($_SESSION['profile']['email'])){
+            require("model/accountInfo.php");
+            $infos = getInfos($_SESSION['profile']['email']);
+            require("view/user/espace.tpl");
+        }
+        else{
+            require("view/site/connexion.tpl");
+        }
     }
 
 ?>
