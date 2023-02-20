@@ -28,7 +28,41 @@
         }
     }
 
-    function afficherquestions(){
+    function afficherquestions($msg=""){
+        
+        
+        require("view/sondage/questions.tpl");
+    }
+
+    function recupNomAliments(){
+
+        require("model/recupNomAliments.php");
+
+        if(isset($_POST['action'])) {
+            $action = $_POST['action'];
+    
+    
+            if($action == "getAliments") {
+                $action = $_POST['ssTypeAliments'];
+                getAliments($action);
+            }
+            if($action == "getTypesAliment") {
+                getTypesAliment();
+            }
+        }
+        
+        
+
+    
+    }
+
+    function afficherMessage(&$msg, $texte) {
+        $msg = $texte;
+    }
+
+    function insertAliments(){
+        require("model/insertAliments.php");
+
         $email;
         $tabAliments;
         $msg = "";
@@ -38,6 +72,9 @@
             selectIdAliments($tabAliments, $tabIdAlim);
             insertionResultat($email, $tabIdAlim);
             afficherMessage($msg, "Aliment(s) inséré(s) avec succès !");
+
+            header("Location: index.php?c=sondage&a=resultats");
+
         }
         else {
             // if(!isset($_POST['email']))
@@ -51,24 +88,12 @@
                 afficherMessage($msg, "Vous avez déjà fait le sondage.");
             else
                 afficherMessage($msg, "Un aliment a été sélectionné plusieurs fois.");
+
+            afficherquestions($msg);
         }
-        
-        require("view/sondage/questions.tpl");
-    }
 
-    function recupNomAliments(){
-        require("model/recupNomAliments.php");
         
 
-    
-    }
-
-    function afficherMessage(&$msg, $texte) {
-        $msg = $texte;
-    }
-
-    function insertAliments(){
-        require("model/insertAliments.php");
     }
 
 ?>

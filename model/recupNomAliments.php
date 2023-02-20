@@ -1,17 +1,6 @@
 <?php
     
-    if(isset($_POST['action'])) {
-        $action = $_POST['action'];
-
-
-        if($action == "getAliments") {
-            $action = $_POST['ssTypeAliments'];
-            getAliments($action);
-        }
-        if($action == "getTypesAliment") {
-            getTypesAliment();
-        }
-    }
+    
     
 
 
