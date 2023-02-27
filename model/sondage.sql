@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 13 Février 2023 à 16:35
+-- Généré le :  Lun 27 Février 2023 à 15:44
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -694,7 +694,14 @@ CREATE TABLE `comptes` (
 --
 
 INSERT INTO `comptes` (`email`, `nom`, `prenom`, `mdp`) VALUES
-('etienne.kita77@gmail.com', 'Etienne', 'Kita', '$2y$10$26KyEUAVUvAqwV./I9wWY.A2.xzpitmqyHXb8a4Ee0clHZhYf7inm');
+('avice@casbt.com', 'De Brisay', 'Avice', '$2y$10$pTLgrSuAkK2pA3jmQtg5.Oa/.UzDFefVucJDlCxWjXgSZX14BA94W'),
+('corinne@casbt.com', 'Brousse', 'Corinne', '$2y$10$0tX7gHcFb53y5EVQ7PBJFeaFNlU9GKDavC2QWQZ6W3wVvvhSu./SO'),
+('dominique@casbt.com', 'Bartaux', 'Dominique', '$2y$10$yJBOn9L3Zlew24txkBgo3.U1R1ahTB.Qivojro.3Z.soLe5lSEvWC'),
+('etienne.kita77@gmail.com', 'Etienne', 'Kita', '$2y$10$26KyEUAVUvAqwV./I9wWY.A2.xzpitmqyHXb8a4Ee0clHZhYf7inm'),
+('etienne.mailly@casbt.com', 'Etienne', 'Mailly', '$2y$10$vthlmcKRtZnPqWq31puP4.5OGi0oK1bCmpx2MmTEq9z5NdVMnDeKu'),
+('fhsfgh@efw.com', 'AAA', 'BBB', '$2y$10$zLSKqEJtwOxuEcdvXlGEqeOBGfp/TdPRhwPxfMY1fFBbnbo2qfc9S'),
+('odette@casbt.com', 'Dubois', 'Odette', '$2y$10$YainFnOYu2YPz/xP6xGzKOGppnFbmM13SP7dklV.15A2uP0UaOIhu'),
+('Zruie.adler@casbt.com', 'Adler', 'Zurie', '$2y$10$OndZ.jhT0vyGhuUz3wwx0OleNwVDW7mVGTzMUQPfiA9HQzpuB/CV2');
 
 -- --------------------------------------------------------
 
@@ -721,9 +728,88 @@ CREATE TABLE `resultats` (
 --
 
 INSERT INTO `resultats` (`email`, `idAliment_1`, `idAliment_2`, `idAliment_3`, `idAliment_4`, `idAliment_5`, `idAliment_6`, `idAliment_7`, `idAliment_8`, `idAliment_9`, `idAliment_10`) VALUES
-('qsd', 512, 552, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('ouistitive', 492, 522, 512, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('dfsf', 492, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+('avice@casbt.com', 455, 115, 453, 185, 23, 200, 450, 451, 68, 92),
+('etienne.kita77@gmail.com', 92, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('corinne@casbt.com', 15, 31, 123, 321, 532, 453, 452, 451, 86, 44),
+('dominique@casbt.com', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('etienne.mailly@casbt.com', 43, 131, 453, 334, 445, 456, 64, 67, 93, 45),
+('fhsfgh@efw.com', 99, 63, 89, 94, 81, 91, 98, 8, 46, 54),
+('Zruie.adler@casbt.com', 64, 89, 47, 197, 497, 487, 489, 71, 89, 418),
+('kenneth.long@casbt.com', 447, 384, 416, 337, 491, 199, 371, 64, 3, 65),
+('benoist.sans@casbt.com', 509, 142, 481, 319, 113, 294, 1, 300, 414, 215),
+('nana.powell@casbt.com', 447, 74, 161, 417, 548, 131, 491, 228, 518, 406),
+('yassin.gasnier@casbt.com', 357, 62, 501, 80, 434, 429, 353, 198, 134, 361),
+('anne-lise.flo@casbt.com', 303, 76, 337, 349, 408, 386, 526, 439, 102, 258),
+('faustine.mota@casbt.com', 89, 195, 54, 266, 198, 158, 125, 494, 70, 217),
+('terry.amar@casbt.com', 345, 377, 165, 3, 309, 4, 425, 480, 6, 381),
+('issa.younes@casbt.com', 145, 54, 292, 182, 275, 348, 179, 158, 190, 224),
+('joaquim.laisne@casbt.com', 62, 172, 310, 418, 206, 526, 12, 31, 249, 472),
+('chaima.williams@casbt.com', 160, 135, 529, 37, 431, 482, 204, 22, 294, 174),
+('raphaele.slama@casbt.com', 12, 296, 39, 88, 324, 510, 78, 442, 144, 391),
+('wayne.louvet@casbt.com', 245, 266, 364, 350, 200, 254, 26, 482, 46, 204),
+('rita.elle@casbt.com', 373, 91, 553, 534, 405, 444, 495, 202, 365, 120),
+('marlon.boucher@casbt.com', 552, 141, 25, 215, 462, 452, 514, 229, 300, 479),
+('jennifer.zero@casbt.com', 10, 85, 518, 331, 113, 436, 559, 527, 93, 171),
+('donovan.cabrera@casbt.com', 314, 558, 84, 113, 237, 439, 147, 433, 348, 103),
+('arlette.fabienne@casbt.com', 181, 548, 405, 526, 285, 63, 445, 4, 286, 196),
+('petra.neau@casbt.com', 269, 252, 227, 404, 69, 359, 344, 222, 114, 370),
+('andree.reid@casbt.com', 339, 98, 379, 108, 274, 38, 545, 102, 304, 386),
+('jim.astier@casbt.com', 230, 471, 20, 166, 14, 345, 133, 465, 191, 370),
+('gil.diawara@casbt.com', 397, 22, 19, 328, 74, 551, 449, 144, 487, 160),
+('alonso.roos@casbt.com', 402, 389, 296, 212, 319, 447, 193, 419, 144, 535),
+('loick.riviere@casbt.com', 529, 168, 465, 279, 486, 143, 398, 87, 489, 461),
+('nguyen.servant@casbt.com', 407, 315, 397, 231, 112, 149, 271, 57, 546, 261),
+('matthew.lariviere@casbt.com', 45, 195, 292, 393, 534, 196, 70, 528, 313, 220),
+('marguerite.lolo@casbt.com', 335, 90, 441, 116, 275, 226, 210, 95, 309, 340),
+('young.leroy@casbt.com', 517, 43, 525, 206, 377, 109, 539, 514, 210, 204),
+('gregory.breton@casbt.com', 299, 263, 300, 278, 505, 264, 480, 291, 189, 143),
+('annette.badin@casbt.com', 176, 42, 252, 94, 125, 64, 164, 58, 381, 435),
+('david.decastro@casbt.com', 385, 528, 13, 555, 456, 23, 486, 152, 460, 427),
+('sonya.gendron@casbt.com', 209, 496, 49, 425, 208, 336, 149, 142, 28, 462),
+('fatma.bertin@casbt.com', 301, 240, 93, 507, 440, 299, 366, 335, 195, 324),
+('ema.julian@casbt.com', 121, 79, 49, 387, 478, 530, 496, 453, 98, 340),
+('marylene.delplanque@casbt.com', 281, 176, 469, 185, 222, 421, 423, 324, 208, 218),
+('rita.lara@casbt.com', 162, 141, 8, 69, 320, 426, 302, 545, 425, 50),
+('lauren.boudin@casbt.com', 29, 46, 425, 349, 39, 26, 143, 211, 48, 450),
+('loulou.vince@casbt.com', 160, 138, 68, 60, 9, 216, 395, 70, 161, 292),
+('youssouf.franceschi@casbt.com', 541, 401, 300, 554, 208, 313, 241, 119, 466, 141),
+('marshall.rinaldi@casbt.com', 460, 19, 64, 450, 304, 420, 62, 425, 212, 506),
+('mickey.bach@casbt.com', 315, 17, 394, 503, 465, 488, 6, 483, 211, 511),
+('ziad.montagne@casbt.com', 106, 250, 72, 16, 307, 531, 552, 377, 359, 22),
+('violette.langlais@casbt.com', 97, 79, 249, 38, 9, 338, 442, 266, 212, 224),
+('aubry.bouvier@casbt.com', 319, 508, 386, 233, 103, 126, 242, 316, 180, 58),
+('peggy.salome@casbt.com', 384, 331, 180, 454, 284, 429, 85, 404, 266, 295),
+('joyce.lem@casbt.com', 473, 286, 233, 212, 199, 269, 170, 40, 278, 518),
+('brad.degaulle@casbt.com', 494, 233, 114, 459, 535, 519, 149, 314, 72, 515),
+('fernand.morin@casbt.com', 338, 285, 28, 78, 554, 146, 421, 356, 224, 9),
+('dani.day@casbt.com', 123, 504, 555, 167, 384, 468, 185, 453, 192, 74),
+('alfredo.solo@casbt.com', 473, 29, 461, 463, 12, 355, 330, 111, 423, 469),
+('arnaud.beauvais@casbt.com', 135, 146, 522, 6, 185, 552, 448, 207, 79, 174),
+('aaron.laforge@casbt.com', 94, 454, 83, 258, 137, 357, 219, 96, 224, 82),
+('tony.samir@casbt.com', 244, 216, 99, 414, 78, 141, 60, 98, 441, 120),
+('louise.bello@casbt.com', 338, 196, 23, 44, 75, 371, 39, 465, 340, 87),
+('astrid.diaby@casbt.com', 17, 509, 486, 515, 413, 464, 63, 398, 302, 479),
+('sarra.louis@casbt.com', 277, 471, 530, 256, 194, 172, 141, 322, 520, 211),
+('aimee.dia@casbt.com', 367, 186, 154, 231, 297, 189, 543, 378, 483, 70),
+('colette.mathon@casbt.com', 542, 314, 77, 28, 260, 122, 386, 346, 347, 267),
+('patrick.dumortier@casbt.com', 447, 280, 507, 430, 451, 63, 32, 519, 24, 271),
+('ilana.sanz@casbt.com', 443, 0, 458, 398, 271, 217, 540, 299, 325, 197),
+('katie.lay@casbt.com', 115, 5, 246, 335, 420, 230, 312, 318, 464, 237),
+('fredo.leduc@casbt.com', 131, 76, 24, 461, 28, 469, 493, 501, 465, 126),
+('nikita.giovanni@casbt.com', 266, 87, 101, 125, 47, 460, 68, 448, 183, 154),
+('baba.boulet@casbt.com', 462, 33, 376, 38, 160, 311, 26, 284, 373, 130),
+('estelle.morales@casbt.com', 490, 357, 277, 496, 248, 392, 315, 192, 532, 486),
+('bonnet.perin@casbt.com', 106, 171, 372, 213, 172, 28, 182, 494, 436, 188),
+('luisa.ingrid@casbt.com', 17, 412, 337, 454, 53, 76, 518, 123, 202, 423),
+('lucy.noel@casbt.com', 520, 305, 433, 429, 293, 329, 152, 514, 291, 170),
+('louisa.laville@casbt.com', 380, 41, 249, 31, 165, 139, 266, 404, 555, 396),
+('sainte.ray@casbt.com', 435, 234, 354, 410, 491, 446, 341, 140, 281, 465),
+('chris.is@casbt.com', 499, 469, 261, 413, 371, 460, 8, 322, 114, 559),
+('sainte.devos@casbt.com', 110, 309, 51, 65, 69, 368, 112, 318, 341, 533),
+('rim.han@casbt.com', 401, 483, 511, 162, 403, 42, 242, 98, 460, 221),
+('nguyen.augustin@casbt.com', 248, 43, 283, 486, 144, 260, 481, 34, 46, 92),
+('sol.rigault@casbt.com', 237, 262, 487, 293, 552, 396, 195, 395, 388, 346),
+('jade.mimi@casbt.com', 323, 518, 547, 328, 279, 420, 128, 59, 527, 60);
 
 --
 -- Index pour les tables exportées
