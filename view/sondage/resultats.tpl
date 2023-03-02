@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="view/styles/aliments.css">
         <script src="view/footer.js"></script>
         <script src="view/aliments.js"></script>
+        <script src="view/resultat.js"></script>
     </head>
     
     <body>
@@ -75,15 +76,17 @@
                             Bienvenue sur la page de résultats. Sur cette page, vous allez pouvoir voir les
                             10 aliments préférés. 
                         </p>
-                        
-                        <table>
+                        <button onclick="tab1(this);">Tous les aliments</button>
+                        <button onclick="tab2(this);">Produits laitiers et assimilés</button>
+                        <button onclick="tab3(this);">Tableau 3</button>
+                        <table id="tableau1">
                         <tr>
                             <th>Classement popularité</th>
                             <th>Nom de l'aliment</th>
                             <th>Nombre de fois choisies</th>
                         </tr>
                         <?php $compteur = 0;
-                        foreach ($gagnant as $g) { ?>
+                        foreach ($resultat1 as $g) { ?>
                             <tr>
                             <td><?php echo ++$compteur; ?></td>
                             <td><?php echo $g['alim_nom_fr']; ?></td>
@@ -92,6 +95,44 @@
                         <?php } ?>
                         
                         </table>
+
+
+                        <table id="tableau2" hidden>
+                        <tr>
+                            <th>Classement popularité</th>
+                            <th>Nom de l'aliment</th>
+                            <th>Groupe de l'aliment</th>
+                            <th>Nombre de fois choisies</th>
+                        </tr>
+                        <?php $compteur = 0;
+                        foreach ($resultat2 as $g) { ?>
+                            <tr>
+                            <td><?php echo ++$compteur; ?></td>
+                            <td><?php echo $g['alim_nom_fr']; ?></td>
+                            <td><?php echo $g['alim_ssssgrp_nom_fr']; ?></td>
+                            <td><?php echo $g['nombre']; ?></td>
+                            </tr>
+                        <?php } ?>
+                        
+                        </table>
+
+                        <table id="tableau3" hidden>
+                        <tr>
+                            <th>Classement popularité</th>
+                            <th>Nom de l'aliment</th>
+                            <th>Nombre de fois choisies</th>
+                        </tr>
+                        <?php $compteur = 0;
+                        foreach ($resultat3 as $g) { ?>
+                            <tr>
+                            <td><?php echo ++$compteur; ?></td>
+                            <td><?php echo $g['alim_nom_fr']; ?></td>
+                            <td><?php echo $g['nombre']; ?></td>
+                            </tr>
+                        <?php } ?>
+                        
+                        </table>
+
 
                     </div>
 

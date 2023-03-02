@@ -2,7 +2,9 @@
 
     function resultats(){
         require("model/resultat.php");
-        $gagnant = selectresultat();
+        $resultat1 = selectresultat1();
+        $resultat2 = selectresultat2();
+        $resultat3 = selectresultat3();
         require("view/sondage/resultats.tpl");
     }
 
