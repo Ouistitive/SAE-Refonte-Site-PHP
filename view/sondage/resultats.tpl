@@ -78,7 +78,7 @@
                         </p>
                         <button onclick="tab1(this);">Tous les aliments</button>
                         <button onclick="tab2(this);">Produits laitiers et assimilés</button>
-                        <button onclick="tab3(this);">Tableau 3</button>
+                        <button onclick="tab3(this);">Groupe des aliments</button>
                         <table id="tableau1">
                         <tr>
                             <th>Classement popularité</th>
@@ -119,14 +119,14 @@
                         <table id="tableau3" hidden>
                         <tr>
                             <th>Classement popularité</th>
-                            <th>Nom de l'aliment</th>
+                            <th>Groupe</th>
                             <th>Nombre de fois choisies</th>
                         </tr>
                         <?php $compteur = 0;
                         foreach ($resultat3 as $g) { ?>
                             <tr>
                             <td><?php echo ++$compteur; ?></td>
-                            <td><?php echo $g['alim_nom_fr']; ?></td>
+                            <td><?php echo $g['alim_grp_nom_fr']; ?></td>
                             <td><?php echo $g['nombre']; ?></td>
                             </tr>
                         <?php } ?>

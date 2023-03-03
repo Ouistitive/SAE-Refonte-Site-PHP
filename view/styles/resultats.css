@@ -13,3 +13,14 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+button{
+  width: 200px;
+  height: 50px;
+  background-color: #183c99;
+  color:white;
+}
+
+button:hover {
+  background-color: #4a86e8;
+}
