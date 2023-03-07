@@ -45,11 +45,11 @@
     
     
             if($action == "getAliments") {
-                $action = $_POST['ssTypeAliments'];
-                getAliments($action);
+                $type = $_POST['ssTypeAliments'];
+                echo getAliments($type);
             }
             if($action == "getTypesAliment") {
-                getTypesAliment();
+                echo getTypesAliment();
             }
         }
         

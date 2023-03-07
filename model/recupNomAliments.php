@@ -22,14 +22,8 @@
 
         $typesAliments = $commande->fetchAll(PDO::FETCH_ASSOC);
 
-        //var_dump($typesAliments);
 
-        /*echo "<option value='vide'>--Choisissez un type d'aliments--</option>";
-        foreach($typesAliments as $type) {
-            echo "<option class='saisie-type-aliment' value=" . $type['alim_ssgrp_nom_fr'] . ">" . $type['alim_ssgrp_nom_fr'] . "</option>";
-        }*/
-
-        echo json_encode($typesAliments);
+        return json_encode($typesAliments);
     }
 
     function getAliments($type) {
@@ -49,6 +43,6 @@
 
         $aliments = $commande->fetchAll(PDO::FETCH_ASSOC);
 
-        echo json_encode($aliments);
+        return json_encode($aliments);
     }
 ?>

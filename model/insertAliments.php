@@ -1,21 +1,9 @@
 <?php
     
 
-    function verification(&$email, &$tabAliments) {
-        if(!isset($_SESSION['profile']['email']))
-            return false;
-
-        $email = $_SESSION['profile']['email'];
-
-        if(!isset($_POST['aliments']))
-            return false;
-        if(!isset($_POST['confirmationDroit']))
-            return false;
-        if(!verifierEmail($email))
-            return false;
-
+    function verificationDoublons(&$tabAliments) {
         
-        $tabAliments = $_POST['aliments'];
+
 
         for($i = 0; $i < count($tabAliments); $i++) {
             for($j = 0; $j < count($tabAliments); $j++) {
@@ -26,9 +14,25 @@
             }
         }
 
-        
-
         return true;
+    }
+
+    function verificationAvecSessionEtPost(){
+        if(!isset($_SESSION['profile']['email']))
+            return false;
+
+        $email = $_SESSION['profile']['email'];
+
+        if(!isset($_POST['aliments']))
+            return false;
+        if(!isset($_POST['confirmationDroit']))
+            return false;
+            if(!verifierEmail($email))
+            return false;
+        
+        $tabAliments = $_POST['aliments'];
+
+        return verificationDoublons($tabAliments);
     }
 
     function selectIdAliments($tabAliments, &$tabId) {
