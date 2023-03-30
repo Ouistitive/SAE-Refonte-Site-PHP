@@ -75,10 +75,14 @@
                     <div class="connexion-texbox">
         			    <input type="text" id="fprenom" placeholder="Prenom" name="prenom">
                     </div>
+                    <div id="msgErreur">
+                        <?php echo !isset($msg) ? "" : $msg; ?>
+                    </div>
                 </div>
     			<a href="index.php?c=site&a=connexion" class="entre">Déjà un compte ?</a>
     			<input type="submit" value="Se connecter">
     		</form>
+            
         </div>
 
 	</div>
