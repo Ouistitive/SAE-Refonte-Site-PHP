@@ -65,37 +65,40 @@
     function insertAliments(){
         require("model/insertAliments.php");
 
-        $email;
+        $email = $_SESSION['profile']['email'];
         $tabAliments;
         $msg = "";
         $tabIdAlim = array();
 
-        if(verification($email, $tabAliments)) {
-            selectIdAliments($tabAliments, $tabIdAlim);
-            insertionResultat($email, $tabIdAlim);
+        
+            
+
+        // if(!isset($_POST['email']))
+        //     afficherMessage($msg, "L'adresse mail n'a pas été renseignée.");
+        // else
+        if(!isset($_POST['aliments']))
+            afficherMessage($msg, "Aucun aliment n'a été saisie.");
+        else if(!isset($_POST['confirmationDroit']))
+            afficherMessage($msg, "Veuillez cocher la case de confirmation.");
+        else if(!verifierEmail())
+            afficherMessage($msg, "Vous avez déjà fait le sondage.");
+        else if(!verificationDoublons($_POST['aliments']))
+            afficherMessage($msg, "Un aliment a été sélectionné plusieurs fois.");
+        else{
+            selectIdAliments($_POST['aliments'], $tabIdAlim);
+            insertionResultat($_SESSION['profile']['email'], $tabIdAlim);
             afficherMessage($msg, "Aliment(s) inséré(s) avec succès !");
 
             header("Location: index.php?c=sondage&a=resultats");
-
         }
-        else {
-            // if(!isset($_POST['email']))
-            //     afficherMessage($msg, "L'adresse mail n'a pas été renseignée.");
-            // else
-            if(!isset($_POST['aliments']))
-                afficherMessage($msg, "Aucun aliment n'a été saisie.");
-            else if(!isset($_POST['confirmationDroit']))
-                afficherMessage($msg, "Veuillez cochez la case de confirmation.");
-            else if(!verifierEmail())
-                afficherMessage($msg, "Vous avez déjà fait le sondage.");
-            else
-                afficherMessage($msg, "Un aliment a été sélectionné plusieurs fois.");
 
-            afficherquestions($msg);
-        }
+
+        afficherquestions($msg);
 
         
 
     }
+
+    
 
 ?>
