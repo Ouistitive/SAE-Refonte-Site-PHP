@@ -78,12 +78,12 @@
                         </p>
                         <button onclick="tab1(this);">Tous les aliments</button>
                         <button onclick="tab2(this);">Produits laitiers et assimilés</button>
-                        <button onclick="tab3(this);">Groupe des aliments</button>
+                        <button onclick="tab3(this);">Groupe d'aliments</button>
                         <table id="tableau1">
                         <tr>
                             <th>Classement popularité</th>
                             <th>Nom de l'aliment</th>
-                            <th>Nombre de fois choisies</th>
+                            <th>Nombre de fois choisi</th>
                         </tr>
                         <?php $compteur = 0;
                         foreach ($resultat1 as $g) { ?>

@@ -23,7 +23,7 @@ function ajouterSaisie() {
         mettreTypeAliments();
     }
     else
-        alert("Vous avez saisie le nombre maximal d'aliments.");
+        alert("Vous avez saisi le nombre maximal d'aliments.");
 }
 
 function supprimerSaisie() {
@@ -36,7 +36,7 @@ function supprimerSaisie() {
         elt[nbAlimentSaisie].classList.add("cache");
     }
     else
-        alert("Vous avez saisie le nombre minimal d'aliments.");
+        alert("Vous avez saisi le nombre minimal d'aliments.");
 }
 
 function showDiv(divId, element) {
@@ -63,7 +63,7 @@ function mettreTypeAliments() {
         dataType: "json",
         method: "POST",
         success: function(retour) {
-            e.html("<option value='vide'>--Choisissez un type d'aliments--</option>");
+            e.html("<option value='vide'>--Choisissez un type d'aliment--</option>");
             retour.forEach(elt => {
                 e.html(e.html() + "<option class='saisie-type-aliment' value='" + elt['alim_ssgrp_nom_fr'] + "'>" + elt['alim_ssgrp_nom_fr'] + "</option>");
             });

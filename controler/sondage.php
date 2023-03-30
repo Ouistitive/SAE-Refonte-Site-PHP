@@ -77,7 +77,7 @@
         //     afficherMessage($msg, "L'adresse mail n'a pas été renseignée.");
         // else
         if(!isset($_POST['aliments']))
-            afficherMessage($msg, "Aucun aliment n'a été saisie.");
+            afficherMessage($msg, "Aucun aliment n'a été saisi.");
         else if(!isset($_POST['confirmationDroit']))
             afficherMessage($msg, "Veuillez cocher la case de confirmation.");
         else if(!verifierEmail())
